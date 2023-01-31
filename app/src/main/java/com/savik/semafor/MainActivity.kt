@@ -8,7 +8,6 @@ import android.widget.ImageView
 import java.util.Timer
 import java.util.TimerTask
 
-// TODO: Надо сделать иконку для приложения 
 class MainActivity : Activity() {
     var imSemafor:ImageView? = null
     var counter:Int = 0
@@ -50,6 +49,6 @@ class MainActivity : Activity() {
                     }
                 }
             }
-        }, 0, 1000)
+        }, 0, 2000)
     }
 }
