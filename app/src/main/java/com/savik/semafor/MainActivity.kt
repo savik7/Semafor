@@ -1,10 +1,12 @@
 package com.savik.semafor
 
 import android.app.Activity
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.Toast
 import java.util.Timer
 import java.util.TimerTask
 
@@ -27,11 +29,17 @@ class MainActivity : Activity() {
         if (!is_run){
             startStop()
             view.setImageResource(R.drawable.button_stop)
+            val myToast = Toast.makeText(this, "Светофор включен!", Toast.LENGTH_SHORT) //Всплывающее сообщение по нажатию кнопки
+            myToast.show() //Показываем всплывающее сообщение
+            MediaPlayer.create(this, R.raw.click).start() // Звук кнопки при нажатии
             is_run = true
         } else {
             timer?.cancel()
             view.setImageResource(R.drawable.button_start)
             imSemafor?.setImageResource(R.drawable.semafor_grey)
+            val myToast = Toast.makeText(this, "Светофор выключен!", Toast.LENGTH_SHORT)
+            myToast.show()
+            MediaPlayer.create(this, R.raw.click).start()
             is_run = false
             counter = 0
         }
