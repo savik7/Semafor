@@ -29,7 +29,7 @@ class MainActivity : Activity() {
         if (!is_run){
             startStop()
             view.setImageResource(R.drawable.button_stop)
-            val myToast = Toast.makeText(this, "Светофор включен!", Toast.LENGTH_SHORT) //Всплывающее сообщение по нажатию кнопки
+            val myToast = Toast.makeText(this, getString(R.string.on), Toast.LENGTH_SHORT) //Всплывающее сообщение по нажатию кнопки
             myToast.show() //Показываем всплывающее сообщение
             MediaPlayer.create(this, R.raw.click).start() // Звук кнопки при нажатии
             is_run = true
@@ -37,7 +37,7 @@ class MainActivity : Activity() {
             timer?.cancel()
             view.setImageResource(R.drawable.button_start)
             imSemafor?.setImageResource(R.drawable.semafor_grey)
-            val myToast = Toast.makeText(this, "Светофор выключен!", Toast.LENGTH_SHORT)
+            val myToast = Toast.makeText(this, getString(R.string.off), Toast.LENGTH_SHORT)
             myToast.show()
             MediaPlayer.create(this, R.raw.click).start()
             is_run = false

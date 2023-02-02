@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Semafor</string>
+    <string name="on">Светофор включен!</string>
+    <string name="off">Светофор выключен!</string>
 </resources>
